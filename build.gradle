@@ -1,10 +1,20 @@
 plugins {
   id 'java'
   id 'application'
-  //  id 'com.github.johnrengelman.shadow' version '1.2.3'
-  id "org.sonarqube" 
+ 
+}
+buildscript {
+  repositories {
+    maven {
+      url "https://plugins.gradle.org/m2/"
+    }
+  }
+  dependencies {
+    classpath "org.sonarsource.scanner.gradle:sonarqube-gradle-plugin:2.8"
+  }
 }
 
+apply plugin: "org.sonarqube"
 
 repositories {
   mavenCentral()
@@ -19,6 +29,7 @@ dependencies {
   compile "com.google.code.gson:gson:2.8.5"
   compile "io.rest-assured:rest-assured:4.0.0"
   compile "io.projectreactor:reactor-core:3.2.5.RELEASE"
+  
 }
 
 mainClassName = 'io.vertx.example.HelloWorldEmbedded'
