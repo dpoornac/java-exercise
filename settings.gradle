@@ -4,8 +4,3 @@ if (!JavaVersion.current().java8Compatible) {
                                     |  You are using something else,
                                     |  Refresh. Try again.'''.stripMargin())
 }
-# gradle.properties
-systemProp.sonar.host.url=http://localhost:9000
- 
-#----- Token generated from an account with 'publish analysis' permission
-systemProp.sonar.login=39c38220add3f93029fc193dae2aea98b6c66796
